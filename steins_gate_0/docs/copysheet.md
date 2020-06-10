@@ -55,6 +55,8 @@ LABMem No.010 瓦尔基里-？
 
 维克多·孔多利亚大学
 
+朱蒂·雷耶斯 
+
 《*Science*》
 
 &emsp;&emsp; 
