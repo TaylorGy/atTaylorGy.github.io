@@ -69,15 +69,17 @@ LABMem No.010 瓦尔基里-？
 
 @ch @cher
 
-*MayQueen+Nyan2*
+ *‘Kurisu’* 
 
-*Okey-dokey！*
+ *MayQueen+Nyan²* 
 
-*Steins;Gate*
+“*Okey-dokey！*”
 
-*Reading·Steiner*
+ *Steins;Gate* 
 
-*El·Psy·Congroo！*
+ *Reading·Steiner* 
+
+ *El·Psy·Congroo!* 
 
 *♪~有一个要寻找的东西~星星在对我笑眯眯~♪*
 *♪~随着风儿眨着眼~只要伸出手就能抓到哟~♪*
