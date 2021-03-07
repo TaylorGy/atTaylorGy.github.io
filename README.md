@@ -58,5 +58,6 @@
     <li> <a href="./steins_gate_0/docs/0041"> 0041 </a> </li>
     <li> <a href="./steins_gate_0/docs/0042"> 0042 </a> </li>
     <li> <a href="./steins_gate_0/docs/0043"> 0043 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0044"> 0044 </a> </li>
   </ul>
 </details>
