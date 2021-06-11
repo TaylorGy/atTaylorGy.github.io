@@ -14,7 +14,7 @@ LABMem No.002 瓦尔基里-巴雷尔·提托
 LABMem No.003 瓦尔基里-？
 {冈伦，桶子君，红莉栖小姐，萌郁小姐，琉华君，菲利斯酱，铃小姐 铃羽酱，比屋定小姐，由季小姐，吹雪酱，枫酱}
 
-牧濑红莉栖 *Makise Kurisu* 克里斯蒂娜 *Christina* 助手 栗悟饭和龟波功 LABMem No.004 瓦尔基里-amadeus？
+牧濑红莉栖 *Makise Kurisu* 克里斯蒂娜 *Christina* 助手 『栗悟饭和龟派气功』 LABMem No.004 瓦尔基里-amadeus？
 {冈部，桥田，真由理，学姐}
 
 桐生萌郁 *Kiriyu Moeka* 闪光的指压师 *Shining Finger*
@@ -73,7 +73,9 @@ LABMem No.010 瓦尔基里-？
 
  *MayQueen+Nyan²* 
 
-“*Okey-dokey！*”
+“*Okey-dokey！*”  
+
+“*Sir！Yes，sir！*”  
 
  *Steins;Gate* 
 
@@ -87,6 +89,12 @@ LABMem No.010 瓦尔基里-？
 普金 戈里巴乔夫 列利钦
 
 瓦尔基里 Valkyrie
+
+《雷NET翔》 乌帕 钥匙圈
+
+【脑科学综合研究机构·日本办公室准备室】
+
+<abbr title=""></abbr>
 
 <br/>
 
