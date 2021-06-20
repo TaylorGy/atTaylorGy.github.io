@@ -96,6 +96,10 @@ LABMem No.010 瓦尔基里-？
 
 <abbr title=""></abbr>
 
+STARTFO
+
+CosPlay
+
 <br/>
 
 > (to be continued)
