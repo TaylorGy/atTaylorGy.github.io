@@ -64,5 +64,12 @@
     <li> <a href="./steins_gate_0/docs/0047"> 0047 - R1 </a> </li>
     <li> <a href="./steins_gate_0/docs/0048"> 0048 - R1 </a> </li>
     <li> <a href="./steins_gate_0/docs/0049"> 0049 - Valkyrie's Final Report_BE </a> </li>
+    <li> <a href="./steins_gate_0/docs/0050"> 0050 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0051"> 0051 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0052"> 0052 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0053"> 0053 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0054"> 0054 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0055"> 0055 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0056"> 0056 - R2 </a> </li>
   </ul>
 </details>
