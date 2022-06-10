@@ -5,13 +5,6 @@
 ## Projects
 
 <details>
-<summary> [game] Human Resource Machine (completed) </summary>
-  <ul>
-    <li> <a href="./human_resource_machine/solutions"> solutions </a> </li> 
-  </ul>
-</details>
-
-<details>
 <summary> [fiction] Steins;Gate 0 (updating) </summary>
   <ul>
     <li> <a href="./steins_gate_0/docs/0000"> Prologue </a> </li>
