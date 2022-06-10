@@ -72,6 +72,7 @@ LABMem No.010
  *‘Kurisu’* 
 
  *MayQueen+Nyan²* 
+ *MayQueen* 
 
 “*Okey-dokey！*”  
 
