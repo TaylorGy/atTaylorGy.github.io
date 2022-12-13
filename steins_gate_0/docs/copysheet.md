@@ -19,7 +19,7 @@ LABMem No.003 瓦尔基里-织女星
 
 桐生萌郁 *Kiriyu Moeka* 闪光的指压师 *Shining Finger*
 LABMem No.005
-
+她的沉默要用两个省略号表达
 
 漆原琉华 *Urushibara Ruka*
 LABMem No.006 瓦尔基里-咲村
