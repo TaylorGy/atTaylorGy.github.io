@@ -5,7 +5,7 @@
 ## Projects
 
 <details>
-<summary> [fiction] Steins;Gate 0 (updating) </summary>
+<summary> [fiction]STEINS;GATE 0 (updating) </summary>
   <ul>
     <li> <a href="./steins_gate_0/docs/0000"> Prologue </a> </li>
     <li> <a href="./steins_gate_0/docs/0001"> 0001 - R0 </a> </li>
