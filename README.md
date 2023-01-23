@@ -77,5 +77,16 @@
     <li> <a href="./steins_gate_0/docs/0067"> 0067 - R2 </a> </li>
     <li> <a href="./steins_gate_0/docs/0068"> 0068 - R2 </a> </li>
     <li> <a href="./steins_gate_0/docs/0069"> 0069 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0070"> 0070 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0071"> 0071 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0072"> 0072 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0073"> 0073 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0074"> 0074 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0075"> 0075 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0076"> 0076 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0077"> 0077 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0078"> 0078 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0079"> 0079 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0080"> 0080 - R2 </a> </li>
   </ul>
 </details>
