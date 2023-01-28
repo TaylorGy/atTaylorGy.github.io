@@ -88,5 +88,15 @@
     <li> <a href="./steins_gate_0/docs/0078"> 0078 - R2 </a> </li>
     <li> <a href="./steins_gate_0/docs/0079"> 0079 - R2 </a> </li>
     <li> <a href="./steins_gate_0/docs/0080"> 0080 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0081"> 0081 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0082"> 0082 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0083"> 0083 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0084"> 0084 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0085"> 0085 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0086"> 0086 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0087"> 0087 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0088"> 0088 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0089"> 0089 - R2 </a> </li>
+    <li> <a href="./steins_gate_0/docs/0090"> 0090 - R2 </a> </li>
   </ul>
 </details>
