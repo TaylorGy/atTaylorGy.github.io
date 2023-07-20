@@ -57,7 +57,7 @@ LABMem No.010
 
 阿莱克西斯·雷斯吉宁 *Alexis·Leskinen* 
 
-朱蒂·雷耶斯 
+朱蒂·莱耶斯 
 
 《*Science*》
 
