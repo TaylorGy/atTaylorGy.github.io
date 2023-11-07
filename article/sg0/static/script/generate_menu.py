@@ -13,15 +13,41 @@ import os
 
 def main():
     root = "../../doc/"
-    list_file = os.listdir(root)[1:]
+    list_file = os.listdir(root)
 
     with open("menu.html", 'w', encoding='utf8') as menu:
-        menu.write("<li> <a href=\"./doc/0000\">序章</a> </li>\n")
+        # menu.write("<li> <a href=\"./doc/0000\">序章</a> </li>\n")
         for file in list_file:
             with open(os.path.join(root, file), 'r', encoding='utf8') as f:
                 title = f.readline()[2:-1]
+                chapter = file.split('.')[0]
+                route = "p0"
+                if 0<= int(chapter) <= 17:
+                    route = "p1"
+                elif int(chapter) <= 35:
+                    route = "p2"
+                elif int(chapter) <= 49:
+                    route = "ed-Kyoju"
+                elif int(chapter) <= 73:
+                    route = "p3"
+                elif int(chapter) <= 93:
+                    route = "ed-Maho"
+                elif int(chapter) <= 112:
+                    route = "p4"
+                elif int(chapter) <= 122:
+                    route = "ed-Kagari"
+                elif int(chapter) <= 200:
+                    route = "ed-Kurisu"
+                elif int(chapter) <= 300:
+                    route = "ed-Mayuri"
+                elif int(chapter) <= 400:
+                    route = "ed-Kyoma"
+                else:
+                    route = "p0"
+                
                 # <li> <a href="./doc/0000"> Prologue </a> </li>
-                li = "<li> <a href=\"./doc/" + file.split('.')[0] + "\">" + title + "</a> </li>\n"
+                # li = "<li> <a href=\"./doc/" + file.split('.')[0] + "\">" + title + "</a> </li>\n"
+                li = f"<li class=\"{route}\"> <a href=\"./doc/{chapter}\">{title}</a> </li>\n"
                 menu.write(li)
 
 if __name__ == '__main__':
