@@ -1,0 +1,10 @@
+.playButton {
+  cursor: pointer;
+  display: inline;
+  vertical-align: middle;
+}
+
+.playText {
+  display: inline;
+  vertical-align: middle;
+}
