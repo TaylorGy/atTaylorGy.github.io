@@ -27,21 +27,21 @@ def main():
                 elif int(chapter) <= 35:
                     route = "p2"
                 elif int(chapter) <= 49:
-                    route = "ed-Kyoju"
+                    route = "ed-kyoju"
                 elif int(chapter) <= 73:
                     route = "p3"
                 elif int(chapter) <= 93:
-                    route = "ed-Maho"
+                    route = "ed-maho"
                 elif int(chapter) <= 112:
                     route = "p4"
                 elif int(chapter) <= 122:
-                    route = "ed-Kagari"
+                    route = "ed-kagari"
                 elif int(chapter) <= 200:
-                    route = "ed-Kurisu"
+                    route = "ed-kurisu"
                 elif int(chapter) <= 300:
-                    route = "ed-Mayuri"
+                    route = "ed-mayuri"
                 elif int(chapter) <= 400:
-                    route = "ed-Kyoma"
+                    route = "ed-kyoma"
                 else:
                     route = "p0"
                 
