@@ -1,6 +1,7 @@
 $(document).ready(function () {
     var menuItems;
     var shownItems;
+    const animeDuration = 400;
 
     $('.menu').load("./static/script/menu.html", function () {
         menuItems = $('.menu li');
@@ -35,11 +36,10 @@ $(document).ready(function () {
 
     // 根据屏幕宽度和元素大小，动态计算目录的页数，并生成翻页按钮
     function generateMenuPages(mItems, sItems) {
-        const itemWidth = 236;
+        const itemWidth = 240;
         const itemHeight = 50;
         const menuHeight = 600;
         const menuWidth = $('.menu').width();
-        const animeDuration = 400;
 
         const itemsPerPage = Math.floor(menuHeight / itemHeight) * Math.floor(menuWidth / itemWidth);
         const totalPages = Math.ceil(sItems.length / itemsPerPage);
@@ -54,14 +54,14 @@ $(document).ready(function () {
 
         $('.page-index').empty();
         for (let page = 1; page <= totalPages; page++) {
-            const button = $(`<li id=page-${page}></li>`);
+            const button = $(`<li id=${page}></li>`);
             // const button = $(`<button>Page ${page}</button>`);
             button.on('click', function () {
                 $('.page-index li').removeClass('active')
                 $(this).addClass('active');
                 // mItems.hide();
                 // mItems.filter(`[data-page="${page}"]`).fadeIn(animeDuration);
-                const targetPage = $(this).attr('id').replace('page-', '');
+                const targetPage = $(this).attr('id');
                 const targetDistance = (targetPage - 1) * menuWidth;
                 $('.menu').animate({ scrollLeft: targetDistance }, animeDuration);
             });
@@ -71,5 +71,29 @@ $(document).ready(function () {
         sItems.fadeIn(animeDuration);
         $('.page-index li:first').click();
     }
+
+    // 鼠标滚轮翻页
+    $('.menu').on('mousewheel DOMMouseScroll', function (event) {
+        const maxPage = $('.page-index li').length;
+        if (maxPage > 1) {
+            const currentPage = $('.page-index li.active').attr('id');
+            let targetPage = 0;
+            if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+                // 鼠标滚轮向上滚动
+                targetPage = currentPage - 1;
+                console.log(targetPage);
+            } else {
+                // 鼠标滚轮向下滚动
+                targetPage = +currentPage + 1;
+                console.log(targetPage);
+            }
+
+            if (1 <= targetPage <= maxPage) {
+                $(`.page-index #${targetPage}`).click();
+            }
+        }
+
+
+    });
 });
 
