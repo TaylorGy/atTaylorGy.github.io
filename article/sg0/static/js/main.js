@@ -1,11 +1,11 @@
 $(document).ready(function () {
     const animeDuration = 400;
-    const widthBreakPoint = 768;
+    const demarcation = 768;
     var menuItems;
     var shownItems;
     const itemWidth = 240;
     const itemHeight = 50;
-    const menuHeight = 600;
+    const menuHeight = $('.menu').height();
     var menuWidth = $('.menu').width();
     var totalPages = 1;
 
@@ -19,8 +19,8 @@ $(document).ready(function () {
     $('.clearlist li').on('click', function () {
         const clickedId = $(this).attr('id');
         if (!$(this).find('.mask1').hasClass('active')) {
-            $('.clearlist li').find('.mask1, .mask2').removeClass('active');
-            $(this).find('.mask1, .mask2').addClass('active');
+            $('.clearlist li').find('.mask1, .mask2, span').removeClass('active');
+            $(this).find('.mask1, .mask2, span').addClass('active');
             if (clickedId === 'btn-all') {
                 shownItems = menuItems;
             } else if (clickedId === 'btn-kyoju') {
@@ -42,33 +42,36 @@ $(document).ready(function () {
 
     // 窗口宽度变化时重新生成目录
     $(window).resize(function () {
-        if ($(window).width() > widthBreakPoint) {
+        if ($(window).width() > demarcation) { // 只在宽屏模式生效
             if (Math.floor($('.menu').width() / itemWidth) !== Math.floor(menuWidth / itemWidth)) {
                 generateMenuPages(menuItems, shownItems);
+
             }
         }
     });
 
     // 鼠标滚轮翻页
     $('.menu').on('mousewheel DOMMouseScroll', function (event) {
-        // const maxPage = $('.page-index li').length;
-        if (totalPages > 1) {
-            const currentPage = $('.page-index li.active').attr('id');
-            let targetPage = 0;
-            if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
-                // 鼠标滚轮向上滚动，向左翻页
-                targetPage = currentPage - 1;
-            } else {
-                // 鼠标滚轮向下滚动，向右翻页
-                targetPage = +currentPage + 1;
-            }
-            // console.log(targetPage);
+        if ($(window).width() > demarcation) { // 只在宽屏模式生效
+            if (totalPages > 1) {
+                const currentPage = $('.page-index li.active').attr('id');
+                let targetPage = 0;
+                if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+                    // 鼠标滚轮向上滚动，向左翻页
+                    targetPage = currentPage - 1;
+                } else {
+                    // 鼠标滚轮向下滚动，向右翻页
+                    targetPage = +currentPage + 1;
+                }
+                // console.log(targetPage);
 
-            if (1 <= targetPage <= totalPages) {
-                $(`.page-index #${targetPage}`).click();
+                if (1 <= targetPage <= totalPages) {
+                    $(`.page-index #${targetPage}`).click();
+                }
             }
         }
     });
+
 
     { // 触屏左右滑动翻页 
         let touchElement = $('.menu');
@@ -79,26 +82,31 @@ $(document).ready(function () {
         });
 
         touchElement.on('touchmove', function (e) {
-            e.preventDefault(); // 防止默认的滚动行为
-            let deltaX = e.originalEvent.touches[0].clientX - startX;
+            if ($(window).width() > demarcation) { // 只在宽屏模式生效
 
-            if (totalPages > 1) {
-                const currentPage = $('.page-index li.active').attr('id');
-                if (deltaX > 50) {
-                    // 向右滑动，向左翻页
-                    targetPage = currentPage - 1;
-                } else if (deltaX < -50) {
-                    // 向左滑动，向右翻页
-                    targetPage = +currentPage + 1;
+                e.preventDefault(); // 防止默认的滚动行为
+                let deltaX = e.originalEvent.touches[0].clientX - startX;
+
+                if (totalPages > 1) {
+                    const currentPage = $('.page-index li.active').attr('id');
+                    if (deltaX > 50) {
+                        // 向右滑动，向左翻页
+                        targetPage = currentPage - 1;
+                    } else if (deltaX < -50) {
+                        // 向左滑动，向右翻页
+                        targetPage = +currentPage + 1;
+                    }
                 }
             }
-
         });
 
         touchElement.on('touchend', function (e) {
-            // 在这里可以进行触摸结束时的处理
-            if (1 <= targetPage <= totalPages) {
-                $(`.page-index #${targetPage}`).click();
+            if ($(window).width() > demarcation) { // 只在宽屏模式生效
+
+                // 在这里可以进行触摸结束时的处理
+                if (1 <= targetPage <= totalPages) {
+                    $(`.page-index #${targetPage}`).click();
+                }
             }
         });
     }

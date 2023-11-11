@@ -23,6 +23,7 @@ img {
 @color-sg-gray-trans: rgba(50, 50, 50, 0.6);
 @color-white-trans: rgba(255, 255, 255, 0.7);
 @anime-duration: 0.3s;
+@demarcation: 768px;
 
 .flex() {
   display: flex;
@@ -37,7 +38,6 @@ img {
   height: 200px;
 
   .logo {
-    .flex;
     height: 100%;
   }
 
@@ -66,6 +66,7 @@ img {
         margin-right: 0;
       }
 
+
       .mask1 {
         position: absolute;
         opacity: 0;
@@ -83,20 +84,7 @@ img {
 
         &.active {
           opacity: 1;
-          bottom: 15px;
-        }
-      }
-
-      &:hover {
-        transform: scale(1.1);
-
-        .mask1 {
-          opacity: 1;
-        }
-
-        .mask2 {
-          opacity: 1;
-          bottom: 15px;
+          bottom: 20px;
         }
       }
     }
@@ -108,9 +96,6 @@ img {
   margin: 15px 10px;
   .flex;
   justify-content: right;
-
-  // margin-left: 15px;
-  // margin-right: 15px;
 
   li {
     width: 48px;
@@ -126,7 +111,6 @@ img {
       margin-right: 0;
     }
 
-    &:hover,
     &.active {
       background-color: @color-white-trans;
     }
@@ -135,7 +119,7 @@ img {
 
 // 菜单
 .menu {
-  height: 600px;
+  height: 650px;
   width: 100%;
   .flex;
   flex-direction: column;
@@ -145,7 +129,7 @@ img {
 
   a {
     display: table;
-    width: 220px;
+    width: 218px;
     line-height: 38px;
     background-color: @color-sg-gray-trans;
     border-radius: 10px;
@@ -158,21 +142,47 @@ img {
     text-shadow: 0px 0px 4px black;
     text-align: center;
     transition: @anime-duration;
+  }
+}
 
-    &:hover {
+@media only screen {
+  // 只在宽屏模式下生效
+  @media (min-width: @demarcation) {
+    .clearlist li:hover {
+      transform: scale(1.1);
+
+      .mask1 {
+        opacity: 1;
+      }
+
+      .mask2 {
+        opacity: 1;
+        bottom: 20px;
+      }
+    }
+
+    .page-index li:hover {
+      background-color: @color-white-trans;
+    }
+
+    .menu a:hover {
       transform: scale(1.1);
       color: @color-white-trans;
       text-shadow: 0px 0px 4px @color-sg-orange;
     }
   }
-}
 
 
-@media only screen {
-  @media (max-width: 768px) {
+  //竖屏模式
+  @media (max-width: @demarcation) {
     body {
       background-image: url("../image/cg/EV_SP02.png");
+      max-width: 500px;
+      // .flex;
+      // flex-direction: column;
     }
+
+
 
     .header {
       flex-direction: column;
@@ -183,39 +193,59 @@ img {
       }
 
       .clearlist {
-        margin-top: 20px;
+        // margin-top: 20px;
 
         li {
-
           img {
             display: none;
           }
 
           span {
-            .flex;
-            width: 100x;
-            line-height: 100px;
+            display: table;
+            // .flex;
+            width: 60px;
+            line-height: 40px;
             background-color: @color-sg-gray-trans;
+            // font-family: 'Roboto Mono', monospace;
             font-size: 20px;
             text-align: center;
+            color: @color-white-trans;
+            text-shadow: 0px 0px 4px @color-sg-orange;
+
+            &.active {
+              color: @color-sg-orange-trans;
+              text-shadow: 0px 0px 4px black;
+            }
 
           }
         }
-
-
-
-
-
-
       }
     }
 
     .page-index {
-      // display: none;
+      display: none;
     }
 
     .menu {
-      display: none;
+      display: table;
+      width: 100%;
+      height: auto;
+      // margin: 0;
+      // flex-direction: row;
+      // justify-content: space-around;
+      // overflow: auto;
+      // width: 480px;
+      // margin: 0, auto;
+
+      a {
+        width: 100%;
+        // margin: 0 auto;
+        // font-family: sans-serif, monospace;
+        // color: @color-sg-orange-trans;
+        // text-shadow: 0px 0px 4px black;
+      }
+
+
     }
   }
 }
