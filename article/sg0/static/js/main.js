@@ -1,7 +1,13 @@
 $(document).ready(function () {
+    const animeDuration = 400;
+    const widthBreakPoint = 768;
     var menuItems;
     var shownItems;
-    const animeDuration = 400;
+    const itemWidth = 240;
+    const itemHeight = 50;
+    const menuHeight = 600;
+    var menuWidth = $('.menu').width();
+    var totalPages = 1;
 
     $('.menu').load("./static/script/menu.html", function () {
         menuItems = $('.menu li');
@@ -9,12 +15,12 @@ $(document).ready(function () {
         generateMenuPages(menuItems, shownItems);
     });
 
-    // 根据所选路线切换目录
+    // 根据所选路线切换目录项目
     $('.clearlist li').on('click', function () {
         const clickedId = $(this).attr('id');
         if (!$(this).find('.mask1').hasClass('active')) {
-            $('.clearlist li').find('.mask1').removeClass('active');
-            $(this).find('.mask1').addClass('active');
+            $('.clearlist li').find('.mask1, .mask2').removeClass('active');
+            $(this).find('.mask1, .mask2').addClass('active');
             if (clickedId === 'btn-all') {
                 shownItems = menuItems;
             } else if (clickedId === 'btn-kyoju') {
@@ -34,21 +40,81 @@ $(document).ready(function () {
         }
     });
 
+    // 窗口宽度变化时重新生成目录
+    $(window).resize(function () {
+        if ($(window).width() > widthBreakPoint) {
+            if (Math.floor($('.menu').width() / itemWidth) !== Math.floor(menuWidth / itemWidth)) {
+                generateMenuPages(menuItems, shownItems);
+            }
+        }
+    });
+
+    // 鼠标滚轮翻页
+    $('.menu').on('mousewheel DOMMouseScroll', function (event) {
+        // const maxPage = $('.page-index li').length;
+        if (totalPages > 1) {
+            const currentPage = $('.page-index li.active').attr('id');
+            let targetPage = 0;
+            if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+                // 鼠标滚轮向上滚动，向左翻页
+                targetPage = currentPage - 1;
+            } else {
+                // 鼠标滚轮向下滚动，向右翻页
+                targetPage = +currentPage + 1;
+            }
+            // console.log(targetPage);
+
+            if (1 <= targetPage <= totalPages) {
+                $(`.page-index #${targetPage}`).click();
+            }
+        }
+    });
+
+    { // 触屏左右滑动翻页 
+        let touchElement = $('.menu');
+        let startX;
+        let targetPage = 0;
+        touchElement.on('touchstart', function (e) {
+            startX = e.originalEvent.touches[0].clientX;
+        });
+
+        touchElement.on('touchmove', function (e) {
+            e.preventDefault(); // 防止默认的滚动行为
+            let deltaX = e.originalEvent.touches[0].clientX - startX;
+
+            if (totalPages > 1) {
+                const currentPage = $('.page-index li.active').attr('id');
+                if (deltaX > 50) {
+                    // 向右滑动，向左翻页
+                    targetPage = currentPage - 1;
+                } else if (deltaX < -50) {
+                    // 向左滑动，向右翻页
+                    targetPage = +currentPage + 1;
+                }
+            }
+
+        });
+
+        touchElement.on('touchend', function (e) {
+            // 在这里可以进行触摸结束时的处理
+            if (1 <= targetPage <= totalPages) {
+                $(`.page-index #${targetPage}`).click();
+            }
+        });
+    }
+
     // 根据屏幕宽度和元素大小，动态计算目录的页数，并生成翻页按钮
     function generateMenuPages(mItems, sItems) {
-        const itemWidth = 240;
-        const itemHeight = 50;
-        const menuHeight = 600;
-        const menuWidth = $('.menu').width();
+        menuWidth = $('.menu').width();
 
         const itemsPerPage = Math.floor(menuHeight / itemHeight) * Math.floor(menuWidth / itemWidth);
-        const totalPages = Math.ceil(sItems.length / itemsPerPage);
+        totalPages = Math.ceil(sItems.length / itemsPerPage);
 
         mItems.each(function () {
             $(this).attr('data-page', '0');
         });
         sItems.each(function (index) {
-            var pageValue = Math.floor(index / itemsPerPage) + 1;
+            let pageValue = Math.floor(index / itemsPerPage) + 1;
             $(this).attr('data-page', pageValue);
         });
 
@@ -71,29 +137,5 @@ $(document).ready(function () {
         sItems.fadeIn(animeDuration);
         $('.page-index li:first').click();
     }
-
-    // 鼠标滚轮翻页
-    $('.menu').on('mousewheel DOMMouseScroll', function (event) {
-        const maxPage = $('.page-index li').length;
-        if (maxPage > 1) {
-            const currentPage = $('.page-index li.active').attr('id');
-            let targetPage = 0;
-            if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
-                // 鼠标滚轮向上滚动
-                targetPage = currentPage - 1;
-                console.log(targetPage);
-            } else {
-                // 鼠标滚轮向下滚动
-                targetPage = +currentPage + 1;
-                console.log(targetPage);
-            }
-
-            if (1 <= targetPage <= maxPage) {
-                $(`.page-index #${targetPage}`).click();
-            }
-        }
-
-
-    });
 });
 
