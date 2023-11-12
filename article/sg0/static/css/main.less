@@ -1,7 +1,7 @@
 body {
   max-width: 1200px;
   width: 100%;
-  margin: auto;
+  margin: 0 auto;
   padding: 0;
   background-color: rgb(25, 25, 25);
   color: rgb(255, 255, 255);
@@ -10,6 +10,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
+  font-family: 'ZCOOL QingKe HuangYou', sans-serif;
 }
 
 img {
@@ -32,12 +33,14 @@ img {
 
 // 头部
 .header {
-  margin: 10px;
+  margin: 2vh 1vh;
   .flex;
   justify-content: space-between;
-  height: 200px;
+  height: 20vh;
+  // height: 200px;
 
   .logo {
+    .flex;
     height: 100%;
   }
 
@@ -48,7 +51,7 @@ img {
 
     li {
       height: 100%;
-      margin: 0 5px;
+      margin-right: 10px;
       .flex;
       position: relative;
       transition: transform 0.3s ease;
@@ -58,14 +61,9 @@ img {
         display: none;
       }
 
-      &:first-of-type {
-        margin-left: 0;
-      }
-
       &:last-of-type {
         margin-right: 0;
       }
-
 
       .mask1 {
         position: absolute;
@@ -93,7 +91,7 @@ img {
 
 // 翻页按钮
 .page-index {
-  margin: 15px 10px;
+  margin: 1vh;
   .flex;
   justify-content: right;
 
@@ -119,7 +117,7 @@ img {
 
 // 菜单
 .menu {
-  height: 650px;
+  height: 70vh;
   width: 100%;
   .flex;
   flex-direction: column;
@@ -128,25 +126,25 @@ img {
   white-space: nowrap;
 
   a {
-    display: table;
+    .flex;
     width: 218px;
     line-height: 38px;
+    justify-content: center;
+    text-align: center;
     background-color: @color-sg-gray-trans;
     border-radius: 10px;
     border: solid 1px @color-sg-orange-trans;
     margin: 5px 10px;
-    font-family: 'ZCOOL QingKe HuangYou', sans-serif;
     font-size: 20px;
     letter-spacing: 2px;
     color: @color-sg-orange;
     text-shadow: 0px 0px 4px black;
-    text-align: center;
     transition: @anime-duration;
   }
 }
 
 @media only screen {
-  // 只在宽屏模式下生效
+  // 只在宽屏模式下生效 - 鼠标动画
   @media (min-width: @demarcation) {
     .clearlist li:hover {
       transform: scale(1.1);
@@ -172,51 +170,57 @@ img {
     }
   }
 
-
-  //竖屏模式
+  // 竖屏模式
   @media (max-width: @demarcation) {
     body {
       background-image: url("../image/cg/EV_SP02.png");
-      max-width: 500px;
-      // .flex;
-      // flex-direction: column;
+      width: 90vw;
     }
-
-
 
     .header {
       flex-direction: column;
-      height: 300px;
+      width: 90vw;
+      height: 30vh;
+      position: fixed;
+      top: 2vh;
+      left: 0;
+      right: 0;
+      padding: 0;
+      margin: 0 auto;
+      // background-color: #bfa;
+      z-index: 1;
 
       .logo {
-        height: 200px;
+        height: 75%;
       }
 
       .clearlist {
-        // margin-top: 20px;
-
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 1vh;
         li {
+          width: 15%;
           img {
             display: none;
           }
 
           span {
-            display: table;
-            // .flex;
-            width: 60px;
-            line-height: 40px;
+            .flex;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
             background-color: @color-sg-gray-trans;
-            // font-family: 'Roboto Mono', monospace;
-            font-size: 20px;
+            border: solid 1px @color-sg-orange-trans;
+            justify-content: center;
             text-align: center;
+            font-size: 20px;
             color: @color-white-trans;
             text-shadow: 0px 0px 4px @color-sg-orange;
 
             &.active {
-              color: @color-sg-orange-trans;
+              color: @color-sg-orange;
               text-shadow: 0px 0px 4px black;
             }
-
           }
         }
       }
@@ -228,21 +232,14 @@ img {
 
     .menu {
       display: table;
-      width: 100%;
-      height: auto;
-      // margin: 0;
-      // flex-direction: row;
-      // justify-content: space-around;
-      // overflow: auto;
-      // width: 480px;
-      // margin: 0, auto;
+      position: relative;
+      top: 34vh;
+      height: 60vh;
+      overflow-y: auto;
 
       a {
-        width: 100%;
-        // margin: 0 auto;
-        // font-family: sans-serif, monospace;
-        // color: @color-sg-orange-trans;
-        // text-shadow: 0px 0px 4px black;
+        width: 90vw;
+        margin: 5px auto;
       }
 
 

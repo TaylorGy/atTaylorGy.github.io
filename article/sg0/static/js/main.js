@@ -114,36 +114,38 @@ $(document).ready(function () {
     // 根据屏幕宽度和元素大小，动态计算目录的页数，并生成翻页按钮
     function generateMenuPages(mItems, sItems) {
         menuWidth = $('.menu').width();
-
-        const itemsPerPage = Math.floor(menuHeight / itemHeight) * Math.floor(menuWidth / itemWidth);
-        totalPages = Math.ceil(sItems.length / itemsPerPage);
-
-        mItems.each(function () {
-            $(this).attr('data-page', '0');
-        });
-        sItems.each(function (index) {
-            let pageValue = Math.floor(index / itemsPerPage) + 1;
-            $(this).attr('data-page', pageValue);
-        });
-
-        $('.page-index').empty();
-        for (let page = 1; page <= totalPages; page++) {
-            const button = $(`<li id=${page}></li>`);
-            // const button = $(`<button>Page ${page}</button>`);
-            button.on('click', function () {
-                $('.page-index li').removeClass('active')
-                $(this).addClass('active');
-                // mItems.hide();
-                // mItems.filter(`[data-page="${page}"]`).fadeIn(animeDuration);
-                const targetPage = $(this).attr('id');
-                const targetDistance = (targetPage - 1) * menuWidth;
-                $('.menu').animate({ scrollLeft: targetDistance }, animeDuration);
-            });
-            $('.page-index').append(button);
-        }
         mItems.hide();
         sItems.fadeIn(animeDuration);
-        $('.page-index li:first').click();
+
+        if (menuWidth > demarcation) {
+            const itemsPerPage = Math.floor(menuHeight / itemHeight) * Math.floor(menuWidth / itemWidth);
+            totalPages = Math.ceil(sItems.length / itemsPerPage);
+
+            mItems.each(function () {
+                $(this).attr('data-page', '0');
+            });
+            sItems.each(function (index) {
+                let pageValue = Math.floor(index / itemsPerPage) + 1;
+                $(this).attr('data-page', pageValue);
+            });
+
+            $('.page-index').empty();
+            for (let page = 1; page <= totalPages; page++) {
+                const button = $(`<li id=${page}></li>`);
+                // const button = $(`<button>Page ${page}</button>`);
+                button.on('click', function () {
+                    $('.page-index li').removeClass('active')
+                    $(this).addClass('active');
+                    // mItems.hide();
+                    // mItems.filter(`[data-page="${page}"]`).fadeIn(animeDuration);
+                    const targetPage = $(this).attr('id');
+                    const targetDistance = (targetPage - 1) * menuWidth;
+                    $('.menu').animate({ scrollLeft: targetDistance }, animeDuration);
+                });
+                $('.page-index').append(button);
+            }
+            $('.page-index li:first').click();
+        }
     }
 });
 
