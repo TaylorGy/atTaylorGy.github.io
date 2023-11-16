@@ -185,6 +185,10 @@ img {
   @media (max-width: @demarcation) {
     body {
       background-image: url("../image/cg/EV_SP02.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
     }
 
     // @keyframes anime-header-scroll-up {
@@ -232,12 +236,12 @@ img {
       .clearlist {
         width: 60%;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-evenly;
 
         li {
           // background-color: @color-sg-gray-trans;
           width: 30%;
-          height: 40%;
+          height: 45%;
           margin: 0px;
           border: solid 1px @color-sg-orange-trans;
           border-radius: 10px;
