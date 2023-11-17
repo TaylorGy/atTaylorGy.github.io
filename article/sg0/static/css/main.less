@@ -133,7 +133,7 @@ img {
 
 // 菜单
 .menu {
-  height: 70vh;
+  height: 65vh;
   width: 100%;
   .flex;
   flex-direction: column;
@@ -192,6 +192,8 @@ img {
       // background-image: url("../image/element/bg-mobile.png");
       background-image: none;
 
+      // iOS Safari 不支持 background-attachment: fixed;
+      // 所以用伪类显示背景
       &::before {
         content: "";
         position: fixed;
@@ -204,8 +206,6 @@ img {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        // background-attachment: fixed;
-
       }
     }
 
