@@ -38,9 +38,9 @@ def main():
                     route = "ed-kagari"
                 elif int(chapter) <= 139:
                     route = "ed-kurisu"
-                elif int(chapter) <= 300:
+                elif int(chapter) <= 168:
                     route = "ed-mayuri"
-                elif int(chapter) <= 400:
+                elif int(chapter) <= 169:
                     route = "ed-kyoma"
                 else:
                     route = "p0"
