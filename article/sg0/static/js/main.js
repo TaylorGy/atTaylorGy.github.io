@@ -35,7 +35,8 @@ $(document).ready(function () {
             } else if (clickedId === 'btn-mayuri') {
                 shownItems = menuItems.filter('.p1, .p2, .ed-mayuri');
             } else if (clickedId === 'btn-kyoma') {
-                shownItems = menuItems.filter('.p1, .p2, .ed-mayuri, .ed-kyoma');
+                shownItems = menuItems.filter('.p1, .p2, .ed-mayuri').not(':last');
+                shownItems = shownItems.add(menuItems.filter('.ed-kyoma'));
             }
             generateMenuPages(menuItems, shownItems);
         }
